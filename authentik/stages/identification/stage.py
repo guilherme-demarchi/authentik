@@ -114,6 +114,8 @@ class IdentificationChallenge(Challenge):
 
     component = CharField(default="ak-stage-identification")
 
+    pending_user_identifier = CharField(required=False, allow_null=True)
+
 
 class IdentificationChallengeResponse(ChallengeResponse):
     """Identification challenge"""
@@ -360,6 +362,10 @@ class IdentificationStageView(ChallengeStageView):
                 button["challenge"] = source_challenge.data
                 ui_sources.append(button)
         challenge.initial_data["sources"] = ui_sources
+
+        if login_hint := get_qs.get("login_hint"):
+            challenge.initial_data["pending_user_identifier"] = login_hint
+
         return challenge
 
     def challenge_valid(self, response: IdentificationChallengeResponse) -> HttpResponse:
