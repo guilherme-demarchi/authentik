@@ -82,10 +82,14 @@ export class AkRememberMeController implements ReactiveController {
         );
     }
 
+    get hasPendingUser() {
+        return !!this.host.challenge?.pendingUserIdentifier;
+    }
+
     get canAutoSubmit() {
         return (
             !!this.host.challenge &&
-            !!this.username &&
+            !!(this.username || this.host.challenge.pendingUserIdentifier) &&
             !!this.usernameField?.value &&
             !this.host.challenge.passwordFields &&
             !this.host.challenge.passwordlessUrl
@@ -108,7 +112,7 @@ export class AkRememberMeController implements ReactiveController {
 
     // After the page is updated, if everything is ready to go, do the autosubmit.
     hostUpdated() {
-        if (this.isEnabled && this.canAutoSubmit) {
+        if ((this.isEnabled || this.hasPendingUser) && this.canAutoSubmit) {
             this.submitButton?.click();
         }
     }

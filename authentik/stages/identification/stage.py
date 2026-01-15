@@ -116,6 +116,7 @@ class IdentificationChallenge(Challenge):
 
     pending_user_identifier = CharField(required=False, allow_null=True)
 
+
 class IdentificationChallengeResponse(ChallengeResponse):
     """Identification challenge"""
 
