@@ -3854,7 +3854,7 @@ doesn't pass when either or both of the selected options are equal or above the 
 </trans-unit>
 <trans-unit id="s1fa5309c30d174b7">
   <source>Paths can be used to organize users into folders depending on which source created them or organizational structure.</source>
-  <target>Caminhos oodem ser utilizados para organizar usuários em pastas dependendo de qual origem criou eles ou da estrutura organizacional.</target>
+  <target>Caminhos podem ser utilizados para organizar usuários em pastas dependendo de qual origem criou eles ou da estrutura organizacional.</target>
 </trans-unit>
 <trans-unit id="s5701b3d3a6678723">
   <source>Paths may not start or end with a slash, but they can contain any other character as path segments. The paths are currently purely used for organization, it does not affect their permissions, group memberships, or anything else.</source>
@@ -5909,7 +5909,7 @@ Você só pode usar políticas aqui, pois o acesso é verificado antes de o usu�
 </trans-unit>
 <trans-unit id="s3ef09dfdd0568b6e">
   <source>Search by username, email, etc...</source>
-  <target>BuscF por nome de usuário, email, etc...</target>
+  <target>Busca por nome de usuário, email, etc...</target>
 </trans-unit>
 <trans-unit id="sd65f96914ccbeb76">
   <source>User Search</source>
